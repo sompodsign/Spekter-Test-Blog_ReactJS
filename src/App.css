@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.main {
+  background-color: #42A5AD;
+}
+
+.container {
+  padding: 40px 50px 40px 50px;
+}
+
+.link {
+  color: hsl(184, 43%, 39%);
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover {
+  color: #42A5AD;
+}
