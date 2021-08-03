@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import HomeScreen from './screens/HomeScreen';
 import PostDetailScreen from './screens/PostDetailScreen';
+import CreatePostScreen from './screens/CreatePostScreen';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Container>
           <Route path='/' component={HomeScreen} exact />
           <Route path='/post/:id' component={PostDetailScreen} />
+          <Route path='/create-new' component={CreatePostScreen} />
         </Container>
         </main>
     </Router>
