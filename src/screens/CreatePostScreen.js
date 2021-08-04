@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { createPost } from '../redux/actions/postActions';
+import { POST_CREATE_RESET } from '../redux/constants/postConstants';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
@@ -16,15 +17,18 @@ function CreatePostScreen() {
     const postCreated = useSelector(state => state.postCreate)
     const { loading, success, error, post } = postCreated
 
+    useEffect(() => {
+        dispatch({ type: POST_CREATE_RESET })
+    }, [])
+
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(createPost({ title, body }))
     }
 
-
     return (
         <div>
-        {success && <Message variant="success">Post Created Successfully. <Link style={{textDecoration: "none"}} to='/'>Go back to home</Link> </Message>}
+            {success && <Message variant="success">Post Created Successfully. <Link style={{ textDecoration: "none" }} to='/'>Go back to home</Link> </Message>}
             <Container>
                 <h1>Create a new post</h1>
                 <Form onSubmit={submitHandler}>
@@ -49,10 +53,10 @@ function CreatePostScreen() {
                     {loading
                         ? <Loader />
                         : error ? <Message variant="danger">{error}</Message>
-                        : <Button
-                            variant="light" type="submit">
-                            Submit
-                        </Button>
+                            : <Button
+                                variant="light" type="submit">
+                                Submit
+                            </Button>
                     }
 
                 </Form>

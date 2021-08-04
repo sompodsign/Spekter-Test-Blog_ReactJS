@@ -19,6 +19,7 @@ import {
 
 //action to load posts from server
 export const listPosts = () => async (dispatch) => {
+    console.log('get list executed')
     try {
         dispatch({ type: POST_LIST_REQUEST });
 

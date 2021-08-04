@@ -16,7 +16,7 @@ function PostDetailScreen({ match, history }) {
     const { post, loading, error } = postItem
 
     const postDelete = useSelector(state => state.deletePost)
-    const { 
+    const {
         loading: deleteLoading,
         success: deleteSuccess,
         error: deleteError } = postDelete

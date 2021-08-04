@@ -43,7 +43,7 @@ export const postListReducer = (state = { posts: [] }, action) => {
 };
 
 //post detail reducer
-export const postDetailReducer = (state = {post: {}}, action) => {
+export const postDetailReducer = (state = { post: {} }, action) => {
     switch (action.type) {
         case POST_DETAIL_REQUEST:
             return { loading: true, products: [] };
@@ -66,10 +66,10 @@ export const postDetailReducer = (state = {post: {}}, action) => {
 };
 
 //post delete reducer
-export const postDeleteReducer = (state ={ post: {} }, action) => {
+export const postDeleteReducer = (state = { post: {} }, action) => {
     switch (action.type) {
         case POST_DELETE_REQUEST:
-            return {loading: true}
+            return { loading: true }
 
         case POST_DELETE_SUCCESS:
             return {
@@ -81,7 +81,7 @@ export const postDeleteReducer = (state ={ post: {} }, action) => {
             return {
                 loading: false, error: action.payload
             };
-        
+
         case POST_DELETE_RESET:
             return {}
 
@@ -92,10 +92,10 @@ export const postDeleteReducer = (state ={ post: {} }, action) => {
 };
 
 //post create reducer
-export const postCreateReducer = (state ={}, action) => {
+export const postCreateReducer = (state = {}, action) => {
     switch (action.type) {
         case POST_CREATE_REQUEST:
-            return {loading: true, }
+            return { loading: true, }
 
         case POST_CREATE_SUCCESS:
             return {
@@ -108,9 +108,9 @@ export const postCreateReducer = (state ={}, action) => {
             return {
                 loading: false, error: action.payload
             };
-        
-            case POST_CREATE_RESET:
-                return {};
+
+        case POST_CREATE_RESET:
+            return {};
 
         default:
             return state;

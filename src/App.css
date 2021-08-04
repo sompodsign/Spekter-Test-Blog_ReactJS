@@ -54,3 +54,11 @@
 .link:hover {
   color: #42A5AD;
 }
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+.cardLink:hover {
+  color: inherit;
+}

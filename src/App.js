@@ -9,17 +9,19 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import PostDetailScreen from './screens/PostDetailScreen';
 import CreatePostScreen from './screens/CreatePostScreen';
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
       <main>
         <Container>
+          <Header />
           <Route path='/' component={HomeScreen} exact />
           <Route path='/post/:id' component={PostDetailScreen} />
           <Route path='/create-new' component={CreatePostScreen} />
         </Container>
-        </main>
+      </main>
     </Router>
   );
 }

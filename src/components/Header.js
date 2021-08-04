@@ -1,13 +1,14 @@
-import React from 'react'
-import {Navbar, Container, Nav } from 'react-bootstrap';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Header() {
     return (
         <div>
             <Navbar  variant="dark">
-                    <Navbar.Brand href="#">Test-Blog</Navbar.Brand>
+                    <Navbar.Brand>Test-Blog</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/create-new">Create New Post</Nav.Link>
+                        <Link style={{textDecoration: 'none', color: 'inherit'}} to="/create-new">Create New Post</Link>
                     </Nav>
             </Navbar>
         </div>
